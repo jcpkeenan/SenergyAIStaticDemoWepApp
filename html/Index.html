@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="html/css/style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>Senergy</title>
+<link rel="icon" href="images/logo.png">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background-color: #f8f9fa;
+        color: #333;
+    }
+    
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    header {
+        background: linear-gradient(135deg, #2078b3 0%, #2078b3 100%);
+        padding: 1.5rem;
+        text-align: center;
+        color: white;
+    }
+    
+    .logo {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero {
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #2078b3;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        color: #4b5563;
+        max-width: 90%;
+    }
+    
+    .app-preview {
+        width: 80%;
+        max-width: 75%;
+        height: 490px;
+        background-color: #e5e7eb;
+        border-radius: 2rem;
+        margin: 1rem auto 2rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .app-screen {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .app-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        border-bottom: 1px solid #e5e7eb;
+        margin-bottom: 1rem;
+    }
+    
+    .app-title {
+        font-size: 45px;
+        font-weight: bold;
+        color: #2078b3;
+    }
+    
+    .dashboard-item {
+        background-color: #f0f7ff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-left: 4px solid #2078b3;
+    }
+    
+    .features {
+        padding: 2rem 1.5rem;
+        background-color: white;
+    }
+
+    .features-container {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+.dashboard-item-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+    
+    .features h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #2078b3;
+    }
+    
+    .feature-list {
+        list-style-type: none;
+    }
+    
+    .feature-item {
+        display: flex;
+        justify-content: start;
+        gap: 15px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-icon {
+        width: 5.5rem;
+        height: 5.5rem;
+        background-color: #bfdff5;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        flex-shrink: 0;
+        color: #2078b3;
+        font-weight: bold;
+    }
+    
+    .feature-text h3 {
+        font-size: 25px;
+        margin-bottom: 0.25rem;
+    }
+    
+    .feature-text p {
+        font-size: 1rem;
+        color: #6b7280;
+    }
+    
+    .cta {
+        padding: 3rem 1.5rem;
+        text-align: center;
+        background: linear-gradient(135deg, #bfdff5 0%, #bfdff5 100%);
+    }
+    
+    .cta h2 {
+        margin-bottom: 1rem;
+        color: #2078b3;
+    }
+    
+    .cta p {
+        margin-bottom: 2rem;
+        color: #4b5563;
+    }
+    
+    .download-btn {
+        display: inline-block;
+        background-color: #2078b3;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+    
+    .download-btn:hover {
+        transform: translateY(-10px);
+        color: white;
+    }
+    
+    footer {
+        padding: 2rem 1.5rem;
+        text-align: center;
+        background-color: #2078b3;
+        color: white;
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+    
+    .footer-links a {
+        margin: 0 0.5rem;
+        color: #d1fae5;
+        text-decoration: none;
+    }
+    
+
+        .dashboard-item h3 {
+            margin: 0 0 8px 0;
+            color: #333;
+        }
+
+        .dashboard-item p {
+            margin: 0;
+            color: #666;
+        }
+/* Hide energy-details by default */
+.energy-details, .recommendation-details, .usage-details, .benchmark-details {
+  display: none;
+  text-align: center;
+  margin-left: 8%;
+}
+
+/* Show energy-details when hovering over dashboard-item-heading */
+.dashboard-item-heading:hover + .energy-details {
+  display: block;
+}
+
+.dashboard-item-heading:hover + .recommendation-details{
+    display: block;
+}
+.dashboard-item-heading:hover + .usage-details{
+    display: block;
+}
+.dashboard-item-heading:hover + .benchmark-details{
+    display: block;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="features-container">
+            <div><img src="images/logo.png" height="95px"></div>
+            <div class="logo"><span>Senergy</span></div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-7">
+                <div style="margin-top: 10px; margin-left: -10%; font-size: 24px;"><p>Empowering building owners</p></div>
+            </div>
+            <div class="col-2">
+                <a class="nav-link text-white" href="ourmission.html">Our Mission</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2>Smart Energy Management</h2>
+        <div class="row">
+            <div class="col-7">
+                <ul>
+                    <li class="feature-item">
+                        <div class="feature-icon"><img src="images/regenerate.png" height="55px"></div>
+                        <div class="feature-text">
+                            <h3>Automatic EnergyStar Integration</h3>
+                            <p>No manual data entry needed - we connect directly to your systems</p>
+                        </div>
+                    </li>
+                    <li class="feature-item" style="margin-right: 5%;">
+                        <div class="feature-icon"><img src="images/predictive-chart.png" height="55px"></div>
+                        <div class="feature-text">
+                            <h3>Benchmark Comparisons</h3>
+                            <p>See how your energy usage compares to industry standards</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-5" style="align-content: end;">
+                <ul>
+                    <li class="feature-item">
+                        <div class="feature-icon"><img src="images/search.png" height="55px"></div>
+                        <div class="feature-text">
+                            <h3>Anomaly Detection</h3>
+                            <p>We identify unusual energy usage patterns.</p>
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-icon"><img src="images/idea.png" height="55px"></div>
+                        <div class="feature-text">
+                            <h3>Actionable Recommendations</h3>
+                            <p>Get specific steps to reduce energy consumption and costs</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      
+    </section>
+    
+    <section class="hero">
+        <h1>Save Energy Without The Effort</h1>
+        <p>Smart analysis and recommendations that cut your utility bills automatically</p>
+        
+        <div class="app-preview">
+            <div class="app-screen">
+                <div class="app-header">
+                    <div class="app-title">Why Senergy?</div>
+                </div>
+                
+                <div class="dashboard-item">
+                    <div class="dashboard-item-heading" style="margin-left: -5%;">
+                        <img src="images/savings.png" height="45px">
+                        <h3>Energy Savings</h3>
+                    </div>
+                    <div class="energy-details">
+                        <p>Track cumulative savings and potential tenant rebates</p>
+                        <p>Identify energy-efficient opportunities and cost reductions.</p>
+                    </div>
+                </div>
+                
+                <div class="dashboard-item">
+                    <div class="dashboard-item-heading" style="margin-left: -1%;">
+                        <img src="images/rating.png" height="35px">
+                        <h3>Recommendations</h3>
+                    </div>
+                    <div class="recommendation-details">
+                        <p>Receive personalized energy and water-savings tips</p>
+                        <p>and AI-driven insights for improved efficiency.</p>
+                    </div>
+                </div>
+                
+                <div class="dashboard-item">
+                    <div class="dashboard-item-heading" style="margin-left: -5%;">
+                        <img src="images/usage.png" height="35px">
+                        <h3>Usage Anomaly</h3>
+                    </div>
+                    <div class="usage-details">
+                        <p>Get instants alerts for unexpected energy or water consumption</p>
+                        <p>Proactively address problems before they escalate.</p>
+                    </div>
+                </div>
+                
+                <div class="dashboard-item">
+                    <div class="dashboard-item-heading" style="margin-left: -3%;">
+                        <img src="images/benchmarking.png" height="45px">
+                        <h3>Benchmark Status</h3>
+                    </div>
+                    <div class="benchmark-details">
+                        <p>Compare energy and water usage to stablished standards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <h2>Ready to Start Saving?</h2>
+        <p>Register to Senergy today and take control of your energy expenses</p>
+        <a href="gettingstarted.html" class="download-btn">Get Started</a>
+    </section>
+    
+    <footer>
+        <p>© 2025 Senergy - Your Energy-Saving Partner</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="ourmission.html">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+</div>
+
+<script type="text/javascript">
+// Add event listeners to all dashboard-item-heading elements
+document.querySelectorAll('.dashboard-item-heading').forEach(heading => {
+  heading.addEventListener('mouseenter', () => {
+    document.querySelector('.app-preview').style.height = '520px';
+  });
+  
+  heading.addEventListener('mouseleave', () => {
+    document.querySelector('.app-preview').style.height = 'initial'; // or your default width
+  });
+});
+</script>
+</body>
+</html>
